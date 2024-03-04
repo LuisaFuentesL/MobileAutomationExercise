@@ -1,4 +1,4 @@
-package com.sampleMobile.screens;
+package com.sampleMobile.utils;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;

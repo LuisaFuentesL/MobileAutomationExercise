@@ -1,21 +1,27 @@
 package com.sampleMobile.tests;
 
 import com.sampleMobile.screens.*;
+import com.sampleMobile.utils.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class BottomNavBarTest extends BaseTest{
+public class BottomNavBarTest extends BaseTest {
 
     private static final String DEMO_HOME_TEXT = "Demo app for the appium-boilerplate";
     private static final String DRAG_SCREEN_TITLE = "Drag and Drop";
 
-    @Test
-    public void navigateNavBar() {
-        HomeScreen homeScreen = returnHomeScreen();
+    private HomeScreen homeScreen;
+    @BeforeTest
+    public void goToHomeScreen(){
+        homeScreen = returnHomeScreen();
         homeScreen.clickHouseButton();
         String demoText = homeScreen.getDemoText();
         Assert.assertEquals(demoText,DEMO_HOME_TEXT);
+    }
 
+    @Test
+    public void navigateNavBar() {
         WebViewScreen webViewScreen = homeScreen.clickWebViewButton();
         boolean isNodeTextPresent = webViewScreen.nodeTextIsPresent();
         Assert.assertTrue(isNodeTextPresent);

@@ -1,10 +1,11 @@
 package com.sampleMobile.screens;
 
+import com.sampleMobile.utils.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public class SwipeScreen extends BaseScreen{
+public class SwipeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(android.widget.TextView).text(\"Swipe horizontal\")")
     WebElement swipeTitle;
 

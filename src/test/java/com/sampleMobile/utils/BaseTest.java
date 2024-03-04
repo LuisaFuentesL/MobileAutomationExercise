@@ -1,9 +1,9 @@
-package com.sampleMobile.tests;
+package com.sampleMobile.utils;
 
 import com.sampleMobile.screens.HomeScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class BaseTest {
     private static final Properties properties = new Properties();
     public static AndroidDriver driver;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     public void environmentSetUp() {
         loadProperties();
         UiAutomator2Options capabilities = new UiAutomator2Options();

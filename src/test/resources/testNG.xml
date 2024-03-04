@@ -6,7 +6,7 @@
             <class name = "com.sampleMobile.tests.BottomNavBarTest"/>
         </classes>
     </test>
-    <test name = "Succesfull Sign Up test">
+    <test name = "Sign Up test">
         <classes>
             <class name = "com.sampleMobile.tests.SignUpTest"/>
         </classes>

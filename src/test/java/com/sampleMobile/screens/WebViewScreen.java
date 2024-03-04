@@ -1,10 +1,11 @@
 package com.sampleMobile.screens;
 
+import com.sampleMobile.utils.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public class WebViewScreen extends BaseScreen{
+public class WebViewScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Next-gen browser and mobile automation test framework for Node.js\")")
     WebElement nodeText;
 

@@ -1,8 +1,7 @@
 package com.sampleMobile.screens;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
+import com.sampleMobile.utils.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -10,11 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class LoginScreen extends BaseScreen{
+public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Login / Sign up Form\")")
     WebElement loginAndSignUpTitle;
 
@@ -98,5 +94,4 @@ public class LoginScreen extends BaseScreen{
         okSignedUpButton.click();
         driver.hideKeyboard();
     }
-
 }

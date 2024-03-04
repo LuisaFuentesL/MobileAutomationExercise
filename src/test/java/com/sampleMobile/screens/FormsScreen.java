@@ -1,10 +1,11 @@
 package com.sampleMobile.screens;
 
+import com.sampleMobile.utils.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public class FormsScreen extends BaseScreen{
+public class FormsScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Form components\")")
     WebElement formsTitle;
 
