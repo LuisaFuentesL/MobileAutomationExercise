@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite">
+    <test name = "Bottom navigation bar test">
+        <classes>
+            <class name = "com.sampleMobile.tests.BottomNavBarTest"/>
+        </classes>
+    </test>
+    <test name = "Succesfull Sign Up test">
+        <classes>
+            <class name = "com.sampleMobile.tests.SignUpTest"/>
+        </classes>
+    </test>
+
+</suite>
