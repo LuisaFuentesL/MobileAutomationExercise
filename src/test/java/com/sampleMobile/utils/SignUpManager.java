@@ -4,7 +4,7 @@ import com.sampleMobile.screens.HomeScreen;
 import com.sampleMobile.screens.LoginScreen;
 import org.testng.Assert;
 
-public class SignUpAux extends BaseTest{
+public class SignUpManager extends BaseTest{
 
     private static final String SIGNED_UP_SUCCESSFULLY_TEXT = "You successfully signed up!";
 

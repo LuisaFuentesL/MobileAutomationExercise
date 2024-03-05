@@ -18,6 +18,9 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(accessibility="Login")
     WebElement loginButton;
 
+    @AndroidFindBy(accessibility="Swipe")
+    WebElement swipeButton;
+
     public HomeScreen(AndroidDriver driver) {
         super(driver);
     }
@@ -37,6 +40,11 @@ public class HomeScreen extends BaseScreen {
     public LoginScreen clickLogInButton(){
         loginButton.click();
         return new LoginScreen(driver);
+    }
+
+    public SwipeScreen clickSwipeButton(){
+        swipeButton.click();
+        return new SwipeScreen(driver);
     }
 
 }

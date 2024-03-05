@@ -2,7 +2,7 @@ package com.sampleMobile.tests;
 
 import com.sampleMobile.screens.LoginScreen;
 import com.sampleMobile.utils.BaseTest;
-import com.sampleMobile.utils.SignUpAux;
+import com.sampleMobile.utils.SignUpManager;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -11,11 +11,11 @@ public class SignUpTest extends BaseTest {
 
     @BeforeTest
     public void goToLoginScreen(){
-        loginScreen = SignUpAux.returnLoginScreen();
+        loginScreen = SignUpManager.returnLoginScreen();
     }
 
     @Test
     public void signUp(){
-        SignUpAux.signUp(loginScreen);
+        SignUpManager.signUp(loginScreen);
     }
 }
