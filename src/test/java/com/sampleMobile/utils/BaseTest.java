@@ -44,6 +44,7 @@ public class BaseTest {
         capabilities.setDeviceName(getCapability("deviceName"));
         capabilities.setAppPackage(getCapability("appPackage"));
         capabilities.setAppActivity(getCapability("appActivity"));
+        capabilities.setApp(getCapability("app"));
     }
 
     public static String getCapability(String variable){
