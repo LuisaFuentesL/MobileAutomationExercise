@@ -1,38 +1,33 @@
 package com.sampleMobile.tests;
 
-import com.sampleMobile.screens.HomeScreen;
 import com.sampleMobile.screens.LoginScreen;
 import com.sampleMobile.utils.BaseTest;
+import com.sampleMobile.utils.SignUpAux;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LogInTest extends BaseTest {
-
+    private static final String LOGGED_IN_SUCCESSFULLY_TEXT = "You are logged in!";
     private LoginScreen loginScreen;
-    private static final String SIGNED_UP_SUCCESSFULLY_TEXT = "You successfully signed up!";
-
 
     @BeforeTest
     public void goToLoginScreen(){
-        HomeScreen homeScreen = returnHomeScreen();
-        loginScreen = homeScreen.clickLogInButton();
-        boolean isLoginAndSignUpTitlePresent = loginScreen.loginAndSignUpTitleIsPresent();
-        Assert.assertTrue(isLoginAndSignUpTitlePresent);
+        loginScreen = SignUpAux.returnLoginScreen();
     }
 
     @BeforeTest
     public void signUp(){
-        loginScreen.clickSignUpSectionButton();
-        loginScreen.fillSignUpInfo();
-        loginScreen.clickSignUpButton();
-        String signedUpSuccessText = loginScreen.returnSignedUpSuccessfullyText();
-        Assert.assertEquals(signedUpSuccessText,SIGNED_UP_SUCCESSFULLY_TEXT);
-        loginScreen.clickOkSignedUp();
+        SignUpAux.signUp(loginScreen);
     }
 
     @Test
     public void logIn(){
-
+        loginScreen.clickLogInSectionButton();
+        loginScreen.fillLogInInfo();
+        loginScreen.clickLogInButton();
+        String loggedInSuccessText = loginScreen.returnSuccessfullText();
+        Assert.assertEquals(loggedInSuccessText,LOGGED_IN_SUCCESSFULLY_TEXT);
+        loginScreen.clickOkButton();
     }
 }

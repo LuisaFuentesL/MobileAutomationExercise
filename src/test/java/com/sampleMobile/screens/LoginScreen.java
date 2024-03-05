@@ -33,10 +33,19 @@ public class LoginScreen extends BaseScreen {
     WebElement signUpButton;
 
     @AndroidFindBy(id="android:id/message")
-    WebElement signedUpSuccessText;
+    WebElement successText;
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(android.widget.Button).text(\"OK\")")
-    WebElement okSignedUpButton;
+    WebElement okButton;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().text(\"Login\")")
+    WebElement logInSectionButton;
+
+    @AndroidFindBy(accessibility="button-LOGIN")
+    WebElement logInButton;
+
+    String email;
+    String password;
 
     Faker faker = new Faker();
     public LoginScreen(AndroidDriver driver) {
@@ -57,25 +66,32 @@ public class LoginScreen extends BaseScreen {
     }
 
     public void fillSignUpInfo(){
+        fillEmailInputSignIn();
+        fillPasswordInputSignIn();
+        fillConfirmPasswordInputSignIn();
+    }
+
+    public void fillEmailInputSignIn(){
+        email = faker.internet().emailAddress();
         fillEmailInput();
-        String password = fillPasswordInput();
-        fillConfirmPasswordInput(password);
     }
 
     public void fillEmailInput(){
         emailInput.click();
-        String email = faker.internet().emailAddress();
         emailInput.sendKeys(email);
     }
 
-    public String fillPasswordInput(){
-        passwordInput.click();
-        String password = faker.internet().password();
-        passwordInput.sendKeys(password);
-        return password;
+    public void fillPasswordInputSignIn(){
+        password = faker.internet().password();
+        fillPasswordInput();
     }
 
-    public void fillConfirmPasswordInput(String password){
+    public void fillPasswordInput(){
+        passwordInput.click();
+        passwordInput.sendKeys(password);
+    }
+
+    public void fillConfirmPasswordInputSignIn(){
         confirmPasswordInput.click();
         confirmPasswordInput.sendKeys(password);
     }
@@ -84,14 +100,28 @@ public class LoginScreen extends BaseScreen {
         signUpButton.click();
     }
 
-    public String returnSignedUpSuccessfullyText(){
+    public String returnSuccessfullText(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOf(signedUpSuccessText));
-        return signedUpSuccessText.getText();
+        wait.until(ExpectedConditions.visibilityOf(successText));
+        return successText.getText();
     }
 
-    public void clickOkSignedUp(){
-        okSignedUpButton.click();
+    public void clickOkButton(){
+        okButton.click();
         driver.hideKeyboard();
     }
+
+    public void clickLogInSectionButton(){
+        logInSectionButton.click();
+    }
+
+    public void fillLogInInfo(){
+        fillEmailInput();
+        fillPasswordInput();
+    }
+
+    public void clickLogInButton(){
+        logInButton.click();
+    }
+
 }

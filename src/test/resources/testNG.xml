@@ -11,5 +11,10 @@
             <class name = "com.sampleMobile.tests.SignUpTest"/>
         </classes>
     </test>
+    <test name = "Login test">
+        <classes>
+            <class name = "com.sampleMobile.tests.LogInTest"/>
+        </classes>
+    </test>
 
 </suite>
