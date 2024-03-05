@@ -13,10 +13,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-
-    private static final String PROPERTIES_FILE = "src/test/resources/config.properties";
-    private static final Properties properties = new Properties();
-    public static AndroidDriver driver;
+    protected static final String PROPERTIES_FILE = "src/test/resources/config.properties";
+    protected static final Properties properties = new Properties();
+    protected static AndroidDriver driver;
 
     @BeforeSuite(alwaysRun = true)
     public void environmentSetUp() {

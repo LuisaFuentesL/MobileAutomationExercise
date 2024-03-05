@@ -7,10 +7,11 @@ import org.openqa.selenium.WebElement;
 
 public class FormsScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Form components\")")
-    WebElement formsTitle;
+    private WebElement formsTitle;
 
     @AndroidFindBy(accessibility="Swipe")
-    WebElement swipeButton;
+    private WebElement swipeButton;
+
     public FormsScreen(AndroidDriver driver) {
         super(driver);
     }

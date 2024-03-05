@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 
 public class WebViewScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Next-gen browser and mobile automation test framework for Node.js\")")
-    WebElement nodeText;
+    private WebElement nodeText;
 
     @AndroidFindBy(accessibility="Login")
-    WebElement loginButton;
+    private WebElement loginButton;
     public WebViewScreen(AndroidDriver driver) {
         super(driver);
     }

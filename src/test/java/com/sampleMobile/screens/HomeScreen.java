@@ -7,23 +7,24 @@ import org.openqa.selenium.WebElement;
 
 public class HomeScreen extends BaseScreen {
     @AndroidFindBy(accessibility="Home")
-    WebElement houseButton;
+    private WebElement houseButton;
 
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Demo app for the appium-boilerplate\")")
-    WebElement demoText;
+    private WebElement demoText;
 
     @AndroidFindBy(accessibility="Webview")
-    WebElement webViewButton;
+    private WebElement webViewButton;
 
     @AndroidFindBy(accessibility="Login")
-    WebElement loginButton;
+    private WebElement loginButton;
 
     @AndroidFindBy(accessibility="Swipe")
-    WebElement swipeButton;
+    private WebElement swipeButton;
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
     }
+
     public void clickHouseButton(){
         houseButton.click();
     }

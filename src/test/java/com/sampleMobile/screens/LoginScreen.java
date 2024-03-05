@@ -12,42 +12,42 @@ import java.time.Duration;
 
 public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Login / Sign up Form\")")
-    WebElement loginAndSignUpTitle;
+    private WebElement loginAndSignUpTitle;
 
     @AndroidFindBy(accessibility="Forms")
-    WebElement formsButton;
+    private WebElement formsButton;
 
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Sign up\")")
-    WebElement signUpSectionButton;
+    private WebElement signUpSectionButton;
 
     @AndroidFindBy(accessibility = "input-email")
-    WebElement emailInput;
+    private WebElement emailInput;
 
     @AndroidFindBy(accessibility="input-password")
-    WebElement passwordInput;
+    private WebElement passwordInput;
 
     @AndroidFindBy(accessibility="input-repeat-password")
-    WebElement confirmPasswordInput;
+    private WebElement confirmPasswordInput;
 
     @AndroidFindBy(accessibility="button-SIGN UP")
-    WebElement signUpButton;
+    private WebElement signUpButton;
 
     @AndroidFindBy(id="android:id/message")
-    WebElement successText;
+    private WebElement successText;
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(android.widget.Button).text(\"OK\")")
-    WebElement okButton;
+    private WebElement okButton;
 
     @AndroidFindBy(uiAutomator = "UiSelector().text(\"Login\")")
-    WebElement logInSectionButton;
+    private WebElement logInSectionButton;
 
     @AndroidFindBy(accessibility="button-LOGIN")
-    WebElement logInButton;
+    private WebElement logInButton;
 
     String email;
     String password;
-
     Faker faker = new Faker();
+
     public LoginScreen(AndroidDriver driver) {
         super(driver);
     }

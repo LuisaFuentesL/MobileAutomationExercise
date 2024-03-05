@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SwipeCardsTest extends BaseTest {
 
-    SwipeScreen swipeScreen;
+    private SwipeScreen swipeScreen;
     @BeforeTest
     public void goToSwipeScreen(){
         HomeScreen homeScreen = returnHomeScreen();
@@ -21,12 +21,11 @@ public class SwipeCardsTest extends BaseTest {
     @Test
     public void swipesOnCards() {
         swipeScreen.swipeToLeft();
-        swipeScreen.swipeToLeft();
-        boolean isFirstCardHiddenTextPresent = swipeScreen.firstCardHiddenTextIsPresent();
-        Assert.assertFalse(isFirstCardHiddenTextPresent);
+        boolean isFirstCardOldIconPresent = swipeScreen.firstCardOldIconIsPresent();
+        Assert.assertFalse(isFirstCardOldIconPresent);
+
         swipeScreen.swipeToRight();
-        swipeScreen.swipeToRight();
-        boolean isLastCardHiddenTextPresent = swipeScreen.lastCardHiddenTextIsPresent();
-        Assert.assertFalse(isLastCardHiddenTextPresent);
+        boolean isSecondCardOldIconPresent = swipeScreen.secondCardOldIconIsPresent();
+        Assert.assertFalse(isSecondCardOldIconPresent);
     }
 }

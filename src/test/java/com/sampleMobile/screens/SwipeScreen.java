@@ -13,22 +13,26 @@ import java.time.Duration;
 
 public class SwipeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(android.widget.TextView).text(\"Swipe horizontal\")")
-    WebElement swipeTitle;
+    private WebElement swipeTitle;
 
     @AndroidFindBy(accessibility="Drag")
-    WebElement dragButton;
+    private WebElement dragButton;
 
-    @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"card\"])[1]" )
-    WebElement firstCard;
+    @AndroidFindBy(uiAutomator = "UiSelector().resourceIdMatches(\"__CAROUSEL_ITEM_0_READY__\")")
+    private WebElement firstCard;
 
-    @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"card\"])[2]" )
-    WebElement secondCard;
+    @AndroidFindBy(uiAutomator = "UiSelector().resourceIdMatches(\"__CAROUSEL_ITEM_1_READY__\")")
+    private WebElement secondCard;
 
-    @AndroidFindBy(uiAutomator = "UiSelector().text(\"FULLY OPEN SOURCE\")")
-    WebElement firstCardHiddenText;
+    @AndroidFindBy(uiAutomator = "UiSelector().resourceIdMatches(\"__CAROUSEL_ITEM_2_READY__\")")
+    private WebElement thirdCard;
 
-    @AndroidFindBy(uiAutomator = "UiSelector().text(\"COMPATIBLE\n\")")
-    WebElement lastCardHiddenText;
+    @AndroidFindBy(uiAutomator = "UiSelector().resourceIdMatches(\"__CAROUSEL_ITEM_0_READY__\").childSelector(UiSelector().text(\"[]\"))")
+    private WebElement firstCardOldIcon;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().resourceIdMatches(\"__CAROUSEL_ITEM_1_READY__\").childSelector(UiSelector().text(\"[]\"))")
+    private WebElement secondCardOldIcon;
+
     public SwipeScreen(AndroidDriver driver) {
         super(driver);
     }
@@ -43,9 +47,6 @@ public class SwipeScreen extends BaseScreen {
     }
 
     public void swipeToLeft(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(firstCard));
-
         Actions action = new Actions(driver);
         action.clickAndHold(secondCard);
         action.moveToElement(firstCard).release();
@@ -53,18 +54,15 @@ public class SwipeScreen extends BaseScreen {
     }
 
     public void swipeToRight(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(firstCard));
-
         Actions action = new Actions(driver);
-        action.clickAndHold(firstCard);
-        action.moveToElement(secondCard).release();
+        action.clickAndHold(secondCard);
+        action.moveToElement(thirdCard).release();
         action.build().perform();
     }
 
-    public boolean firstCardHiddenTextIsPresent(){
+    public boolean firstCardOldIconIsPresent(){
         try {
-            if (firstCardHiddenText.isDisplayed()) {
+            if (firstCardOldIcon.isDisplayed()) {
                 return true;
             }
         } catch (NoSuchElementException e) {
@@ -73,9 +71,9 @@ public class SwipeScreen extends BaseScreen {
         return false;
     }
 
-    public boolean lastCardHiddenTextIsPresent(){
+    public boolean secondCardOldIconIsPresent(){
         try {
-            if (lastCardHiddenText.isDisplayed()) {
+            if (secondCardOldIcon.isDisplayed()) {
                 return true;
             }
         } catch (NoSuchElementException e) {

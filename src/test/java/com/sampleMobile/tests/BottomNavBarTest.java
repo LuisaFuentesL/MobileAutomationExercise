@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class BottomNavBarTest extends BaseTest {
-
     private static final String DEMO_HOME_TEXT = "Demo app for the appium-boilerplate";
     private static final String DRAG_SCREEN_TITLE = "Drag and Drop";
 
