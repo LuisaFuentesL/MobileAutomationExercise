@@ -27,5 +27,10 @@ public class SwipeCardsTest extends BaseTest {
         swipeScreen.swipeToRight();
         boolean isSecondCardOldIconPresent = swipeScreen.secondCardOldIconIsPresent();
         Assert.assertFalse(isSecondCardOldIconPresent);
+
+        swipeScreen.swipeUp();
+        boolean isRobotTextPresent= swipeScreen.robotTextIsPresent();
+        Assert.assertTrue(isRobotTextPresent);
+
     }
 }

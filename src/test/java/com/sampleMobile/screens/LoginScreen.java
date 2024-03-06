@@ -101,7 +101,7 @@ public class LoginScreen extends BaseScreen {
     }
 
     public String returnSuccessfullText(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(successText));
         return successText.getText();
     }

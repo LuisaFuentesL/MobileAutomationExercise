@@ -20,7 +20,7 @@ public class WebViewScreen extends BaseScreen {
     }
 
     public boolean nodeTextIsPresent(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
         wait.until(ExpectedConditions.visibilityOf(nodeText));
         return nodeText.isDisplayed();
     }
